@@ -1,48 +1,85 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-
   StyleSheet,
   Text,
   View,
+  Image,
+  ScrollView,
 } from 'react-native';
 
 function App(): React.JSX.Element {
   
   return (
-    <View style={styles.contenedor}>
-        <View style={styles.caja1}></View>
-        <View style={styles.caja2}></View>
-        <View style={styles.caja3}></View>
-        <View style={styles.caja4}></View>
+    <View>
+        
+        <View style={{ flexDirection: 'row' }}>
+          <Image
+            style={styles.banner}
+            source={ require('./assets/img/bg.jpg')}
+          />
+        </View>
+
+        <View style={styles.contenedor}>
+          <Text style={styles.titulo}>¿Qué hacer en Paris?</Text>
+
+          <ScrollView
+            horizontal={true}
+          >
+            <View>
+              <Image
+                style={styles.ciudad}
+                source={ require('./assets/img/actividad1.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.ciudad}
+                source={ require('./assets/img/actividad2.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.ciudad}
+                source={ require('./assets/img/actividad3.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.ciudad}
+                source={ require('./assets/img/actividad4.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.ciudad}
+                source={ require('./assets/img/actividad5.jpg')}
+              />
+            </View>
+          </ScrollView>
+        </View>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  banner: {
+    height: 230,
+    flex: 1,
+  },
+  titulo: {
+    fontWeight: 'bold',
+    fontSize: 24, 
+    marginVertical: 20,
+  },
   contenedor: {
-    backgroundColor: 'cornflowerblue',
-    flex: 1,
+    marginHorizontal: 10,
   },
-  caja1: {
-    padding: 20,
-    backgroundColor: 'navy',
-    flex: 1,
-  },
-  caja2: {
-    padding: 20,
-    backgroundColor: 'yellow',
-    flex: 1,
-  },
-  caja3: {
-    padding: 20,
-    backgroundColor: 'green',
-    flex: 1,
-  },
-  caja4: {
-    padding: 20,
-    backgroundColor: 'teal',
-    flex: 2,
+  ciudad: {
+    width: 250,
+    height: 300,
+    marginRight: 10,
   },
 });
 
